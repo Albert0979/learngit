@@ -10,3 +10,18 @@ git log --pretty=oneline   简化显示
 git reset --hard HEAD^  退回到上一个版本  HEAD^^ 上两个版本 HEAD~n  第前n个版本
 git reset --hard <提交的版本号（不用全输）>   回到相应的版本
 git reflog       记录你的每一次命令
+
+#  git 工作区和暂存区
+
+工作区(working directory)
+就是电脑里能看到的目录
+
+版本库(repository)
+工作区有一个隐藏目录 .git , 这是git的版本库
+版本库里有很多东西，有叫 stage(or index)的暂存区, git 自己帮你创建的第一个分支 master 以及指向
+master 的一个指针 HEAD.
+
+git add 指令实际上就是把文件加入到暂存区
+git commit 就是把暂存区里的文件提交到当前分支
+
+我们再创建Git版本库时git自动创建了一个也是唯一一个分支 master, git commit 就是往master 上提交更改
