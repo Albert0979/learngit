@@ -56,3 +56,13 @@ git commit -m <message>
 先在GitHub上创建一个库，创建之后它会告诉你怎么关联本地库
 第一次关联会有一个警告，可以对比一下，输入 yes 回车即可
 之后就只要 git push origin <branch> 就可以把本地的branch分支推送到GitHub上
+
+
+删除远程库
+git remote rm <name>
+使用前可以先用
+git remote -v 查看远程库信息
+
+
+从远程库克隆
+先创建一个repository，用它教你的命令clone一个
