@@ -75,9 +75,9 @@ git 中 HEAD指向的时分支，初始时是master，master再指向提交，�
 分支而言的（也就是HEAD所指向的分支）
 
 创建分支  git branch <branch name>
-转到相应分支  git checkout <branch name>
-上面两个命令的合并  git checkout -b <branch name>
+转到相应分支  git checkout(or switch) <branch name>
+上面两个命令的合并  git checkout -b <branch name>    or    git switch -c <branch name>
 
 分支的合并
 比如你在dev上做完了一些工作，要把dev合并到master上，有以下方法：
-1.直接将master指向dev的当前提交，合并后如果想删除分支
+1.直接将master指向dev的当前提交，合并后如果想删除分支用 git branch -d <branch name>
