@@ -32,3 +32,5 @@ git commit 就是把暂存区里的文件提交到当前分支
 git restore <file>  撤销在工作区里的修改，如果stage里没文件，撤回到版本库里的状态，
                                          stage里有文件，就撤回到暂存区后的状态
 
+git restore --staged <file>    从stage里取消文件
+如果提交了，就退回到上一个版本   git reset --hard HEAD^
