@@ -50,3 +50,9 @@ git commit -m <message>
 会有提示消息，点回车
 （ok）
 用 ls ~/.ssh 查看
+
+
+添加远程库
+先在GitHub上创建一个库，创建之后它会告诉你怎么关联本地库
+第一次关联会有一个警告，可以对比一下，输入 yes 回车即可
+之后就只要 git push origin <branch> 就可以把本地的branch分支推送到GitHub上
