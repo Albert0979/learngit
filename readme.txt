@@ -34,3 +34,12 @@ git restore <file>  撤销在工作区里的修改，如果stage里没文件，�
 
 git restore --staged <file>    从stage里取消文件
 如果提交了，就退回到上一个版本   git reset --hard HEAD^
+
+
+删除文件
+手动删或 rm <file>
+git rm <file>
+git commit -m <message>
+撤销删除
+在commit删除 之前 git restore <file>
+在commit删除 之后 版本回溯
