@@ -28,3 +28,7 @@ git add 指令实际上就是把文件加入到暂存区
 git commit 就是把暂存区里的文件提交到当前分支
 
 我们再创建Git版本库时git自动创建了一个也是唯一一个分支 master, git commit 就是往master 上提交更改
+
+git restore <file>  撤销在工作区里的修改，如果stage里没文件，撤回到版本库里的状态，
+                                         stage里有文件，就撤回到暂存区后的状态
+
