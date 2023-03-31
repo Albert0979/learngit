@@ -43,3 +43,10 @@ git commit -m <message>
 撤销删除
 在commit删除 之前 git restore <file>
 在commit删除 之后 版本回溯
+
+创建公钥私钥
+在用户界面 Git Bush 
+输入 ssh-keygen -t rsa -C "youremail@example.com"
+会有提示消息，点回车
+（ok）
+用 ls ~/.ssh 查看
