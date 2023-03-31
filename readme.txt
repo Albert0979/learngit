@@ -66,3 +66,17 @@ git remote -v 查看远程库信息
 
 从远程库克隆
 先创建一个repository，用它教你的命令clone一个
+
+
+Git 分支
+git 中 HEAD指向的时分支，初始时是master，master再指向提交，创建分支其实
+就是更改指向提交的指针，再把HEAD指向那个指针，你对工作区的更改、提交都是针对你目前所在的
+分支而言的（也就是HEAD所指向的分支）
+
+创建分支  git branch <branch name>
+转到相应分支  git checkout <branch name>
+上面两个命令的合并  git checkout -b <branch name>
+
+分支的合并
+比如你在dev上做完了一些工作，要把dev合并到master上，有以下方法：
+1.直接将master指向dev的当前提交，合并后如果想删除分支
