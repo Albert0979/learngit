@@ -56,6 +56,7 @@ git commit -m <message>
 
 添加远程库
 先在GitHub上创建一个库，创建之后它会告诉你怎么关联本地库
+关联之后第一次push加u参数 git push -u origin master,   这一Git会把本地master分支内容推送到新的master分支，还会把本地master分支和远程的master分支关联起来
 第一次关联会有一个警告，可以对比一下，输入 yes 回车即可
 之后就只要 git push origin <branch> 就可以把本地的branch分支推送到GitHub上
 
@@ -64,6 +65,7 @@ git commit -m <message>
 git remote rm <name>
 使用前可以先用
 git remote -v 查看远程库信息
+这个删除只是解除了本地仓库和远程仓库的关系
 
 
 从远程库克隆
@@ -84,3 +86,34 @@ git 中 HEAD指向的时分支，初始时是master，master再指向提交，�
 1.直接将master指向dev的当前提交，合并后如果想删除分支用 git branch -d <branch name>
 2.合并可能并不怎么简单，比如出现“冲突”,这个时候需要你自行修改，再提交，然后合并完成了
 用  git log --graph 可以查看分支合并图
+
+删除分支 git branch -d <name>
+
+
+分支合并的时候，如果可以的话Git会优先使用 Fast forward 模式（就是直接把 master 指针切换到分支那里）
+如果要禁用 Fast forward 模式合并分支，那 Git 在合并分支的时候会生成一个提交 commit, 
+例如用 --no-ff 方式 git merge
+
+git merge --no-ff -m "merge with no-ff" dev
+
+
+
+
+Bug 分支
+设想这样一个情况：你在某个分支上做事，但突然项目出了一个bug，自然你需要创建一个分支来修复这个bug，
+但你不想或不能commit现在这个分支，你可以用
+git stash save "message" 储藏这个分支并标记信息，没有信息可以直接用 git stash
+修复好bug后想回到这个状态，你要先回到这个分支然后用
+git stash pop 来回到暂存状态并清空储藏
+git stash list  查看储藏的状态列表
+git stash apply stash@{n}  回到指定状态并不删除储藏的状态
+git stash pop stash@{n}    会删除
+
+git cherry-pick <commit id>  复制一个特定的提交到当前分支
+
+
+
+feature分支
+创建一个新feature,最好新建一个分支
+要丢弃一个没有合并的分支，用
+git branch -D <name> 强制删除
